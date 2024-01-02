@@ -17,7 +17,7 @@
                 class="i-mdi-arrow-forward group-hover:translate-x-1 mx-1 transition-all duration-150"
             ></div>
         </a>
-        <a href="#" class="py-3 px-5 rounded-xl bg-ctp-">Docs</a>
+        <a href="/docs/" class="py-3 px-5 rounded-xl bg-ctp-">Docs</a>
     </div>
 </div>
 

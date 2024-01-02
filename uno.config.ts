@@ -1,6 +1,13 @@
 // uno.config.ts
-import { defineConfig, presetIcons, presetUno } from "unocss";
+import {
+    defineConfig,
+    presetIcons,
+    presetUno,
+    presetTypography,
+    presetWebFonts,
+} from "unocss";
 import { extendCatppuccin } from "unocss-catppuccin";
+import { flavors } from "@catppuccin/palette";
 
 export default defineConfig({
     content: {
@@ -8,7 +15,23 @@ export default defineConfig({
     },
     presets: [
         presetUno(),
-        presetIcons({}),
+        presetWebFonts({
+            provider: "google",
+            fonts: {
+                sans: "Roboto",
+                mono: "Montserrat",
+            },
+            extendTheme: true,
+        }),
+        presetIcons(),
+        presetTypography({
+            cssExtend: {
+                "pre:has(code)": {
+                    "background-color": `${flavors.mocha.colors.mantle.hex} !important`,
+                    position: "relative",
+                },
+            },
+        }),
         extendCatppuccin({
             prefix: "ctp",
             defaultVariant: "mocha",
