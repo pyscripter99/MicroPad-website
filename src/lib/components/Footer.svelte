@@ -1,7 +1,7 @@
 <div class="bg-ctp-crust p-10">
     <div class="flex flex-row justify-between">
         <div class="flex flex-col gap-2">
-            <p class="text-lg">Powered by</p>
+            <p class="text-lg">Powered by Github Pages</p>
             <div
                 class="flex flex-row items-center p-3 bg-ctp-base text-lg w-fit rounded-xl gap-2"
             >
