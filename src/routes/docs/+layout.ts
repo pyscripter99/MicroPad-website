@@ -1,4 +1,4 @@
-import { getDocItems } from "$lib/docs";
+import { generateContextItems, getDocItems } from "$lib/docs";
 import type { LayoutLoad } from "./$types";
 import { redirect } from "@sveltejs/kit";
 
@@ -12,6 +12,8 @@ export const load = (async ({ url }) => {
         if (v.url == url.pathname && v.folder) {
             throw redirect(302, v.url.replace(/\/$/, "") + v.defaultItem);
         }
+
+        // console.log(generateContextItems(v.path));
     });
     return {};
 }) satisfies LayoutLoad;
