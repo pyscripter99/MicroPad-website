@@ -3,3 +3,9 @@ title: Install
 ---
 
 # Quickstart
+
+This is the installation page
+
+```sh
+$ go install example.com
+```
