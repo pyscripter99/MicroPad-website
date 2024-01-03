@@ -5,6 +5,8 @@ import * as fs from "node:fs";
 import { escapeSvelte, mdsvex } from "mdsvex";
 import shiki from "shiki";
 
+import remarkHeadingId from "remark-heading-id";
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
     // Consult https://kit.svelte.dev/docs/integrations#preprocessors
@@ -27,6 +29,7 @@ const config = {
                     return `{@html \`${html}\`}`;
                 },
             },
+            remarkPlugins: [[remarkHeadingId, { defaults: true }]],
         }),
     ],
 
