@@ -1,9 +1,10 @@
-import { docItems } from "$lib/docs";
-import { onMount } from "svelte";
+import { getDocItems } from "$lib/docs";
 import type { LayoutLoad } from "./$types";
 import { redirect } from "@sveltejs/kit";
 
 export const load = (async ({ url }) => {
+    const docItems = getDocItems();
+
     if (url.pathname == "/docs/") {
         throw redirect(302, "/docs/quickstart/install/");
     }

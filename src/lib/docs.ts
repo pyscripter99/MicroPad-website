@@ -31,31 +31,35 @@ export function pathToUrl(filePath: string): string {
     return filePath;
 }
 
-export let docItems: DocItem[] = [];
+export function getDocItems(): DocItem[] {
+    const paths = import.meta.glob("/src/routes/docs/**/*+page.svx", {
+        eager: true,
+    });
 
-const paths = import.meta.glob("/src/routes/docs/**/*+page.svx", {
-    eager: true,
-});
+    let docItems: DocItem[] = [];
 
-for (const docItem in paths) {
-    const file = paths[docItem];
-    const url = pathToUrl(docItem);
+    for (const docItem in paths) {
+        const file = paths[docItem];
+        const url = pathToUrl(docItem);
 
-    if (file && typeof file === "object" && "metadata" in file && url) {
-        const metadata = file.metadata as Omit<DocItem, "url">;
-        const docItem = { ...metadata, url } satisfies DocItem;
-        if (docItem.folder) {
-            docItem.children = [];
-        }
-        let folders = docItems.filter(
-            (v) => v.folder && docItem.url.startsWith(v.url)
-        );
-        if (folders.length == 0) {
-            docItems.push(docItem);
-        } else {
-            folders.forEach((v) => {
-                v.children.push(docItem);
-            });
+        if (file && typeof file === "object" && "metadata" in file && url) {
+            const metadata = file.metadata as Omit<DocItem, "url">;
+            const docItem = { ...metadata, url } satisfies DocItem;
+            if (docItem.folder) {
+                docItem.children = [];
+            }
+            let folders = docItems.filter(
+                (v) => v.folder && docItem.url.startsWith(v.url)
+            );
+            if (folders.length == 0) {
+                docItems.push(docItem);
+            } else {
+                folders.forEach((v) => {
+                    v.children.push(docItem);
+                });
+            }
         }
     }
+
+    return docItems;
 }
