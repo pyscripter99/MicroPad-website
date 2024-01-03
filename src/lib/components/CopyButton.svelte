@@ -3,9 +3,6 @@
 </script>
 
 <button
-    class="text-2xl translate-y--50% top-50% right-1rem absolute text-zinc-400 hover:text-zinc-100"
-    ><div
-        class="i-material-symbols-content-copy-outline-rounded"
-        on:click={() => {}}
-    ></div></button
+    class="text-2xl top-1rem right-1rem absolute text-zinc-400 hover:text-ctp-green transition-all duration-100 p-1 hover:bg-ctp-base rounded-md border border-1.5 border-transparent hover:border-ctp-green"
+    ><div class="i-material-symbols-content-copy-outline-rounded"></div></button
 >
