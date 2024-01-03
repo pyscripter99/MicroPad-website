@@ -6,7 +6,7 @@
     import "@unocss/reset/tailwind.css";
     import "virtual:uno.css";
 
-    onMount(() => {
+    function addCopyButtons() {
         for (const node of document.querySelectorAll("pre > code")) {
             let textContent = node.textContent ?? "";
             createRoot(CopyButton, {
@@ -16,7 +16,10 @@
                 },
             });
         }
-    });
+    }
+
+    onMount(addCopyButtons);
+    afterNavigate(addCopyButtons);
 </script>
 
 <slot />
