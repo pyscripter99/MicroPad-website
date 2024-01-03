@@ -10,7 +10,7 @@
     <p class="text-lg">Simple, hackable text editor written in Go</p>
     <div class="flex flex-row gap-2">
         <a
-            href="#"
+            href="/docs/quickstart/install/"
             class="py-3 px-5 rounded-xl bg-ctp-green text-ctp-base group flex flex-row items-center"
             >Let's go
             <div
