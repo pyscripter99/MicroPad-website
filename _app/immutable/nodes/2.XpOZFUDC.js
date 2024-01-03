@@ -1,1 +1,0 @@
-import{n as s,d as o,h as l,g as c,l as p}from"../chunks/disclose-version.oivCANvY.js";import{b as i,c as n}from"../chunks/runtime.QHyPGw3X.js";var m=p('<article class="prose text-ctp-text prose-zinc prose-invert m-10"><!></article>');function d(e,t){n(t,!1);var a=c(e,!0,m),r=l(a);s(r,t.children,{},null),o(e,a),i()}export{d as component};

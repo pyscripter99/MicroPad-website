@@ -1,0 +1,1 @@
+import"./disclose-version.15-3dQtY.js";import{p as e,b as a}from"./runtime.CzAkxY_o.js";const o={folder:!0,title:"Quickstart",defaultItem:"/install/"};function l(r,t){a(t,!1),e()}const p=Object.freeze(Object.defineProperty({__proto__:null,default:l,metadata:o},Symbol.toStringTag,{value:"Module"}));export{p as _,l as a};
