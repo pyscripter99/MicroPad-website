@@ -29,8 +29,9 @@ jobs:
               with:
                   node-version: 21
                   cache: "npm"
-            - run: npm ci
-            - run: npm run build
+            - run: pnpm install
+            - run: pnpm ci
+            - run: pnpm run build
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v1
               with:
