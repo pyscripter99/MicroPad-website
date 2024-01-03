@@ -28,8 +28,7 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 21
-                  cache: "npm"
-            - run: pnpm install
+                  cache: "pnpm"
             - run: pnpm ci
             - run: pnpm run build
             - name: Upload artifact
