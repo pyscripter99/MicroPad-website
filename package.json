@@ -47,6 +47,11 @@
   "dependencies": {
     "@catppuccin/palette": "^1.0.1",
     "@unocss/reset": "^0.58.2",
-    "shiki": "^0.14.7"
+    "@vcarl/remark-headings": "^0.1.0",
+    "remark-heading-id": "^1.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "shiki": "^0.14.7",
+    "unified": "^11.0.4"
   }
 }

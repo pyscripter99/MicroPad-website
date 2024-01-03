@@ -1,3 +1,11 @@
+import { unified } from "unified";
+import remarkHeadings from "@vcarl/remark-headings";
+import remarkHeadingId from "remark-heading-id";
+import remarkParse from "remark-parse";
+import remarkStringify from "remark-stringify";
+
+import fs from "node:fs";
+
 export type DocItem = {
     title: string;
     url: string;
@@ -5,6 +13,7 @@ export type DocItem = {
     folder: boolean;
     children: DocItem[];
     expanded: boolean;
+    path: string;
 };
 
 export function pathToUrl(filePath: string): string {
@@ -31,6 +40,18 @@ export function pathToUrl(filePath: string): string {
     return filePath;
 }
 
+export function generateContextItems(path: string) {
+    const preprocessor = unified()
+        .use(remarkHeadingId)
+        .use(remarkParse)
+        .use(remarkStringify)
+        .use(remarkHeadings);
+    const input = fs.readFileSync(path);
+
+    const vfile = preprocessor.processSync(input);
+    return vfile.data.headings;
+}
+
 export function getDocItems(): DocItem[] {
     const paths = import.meta.glob("/src/routes/docs/**/*+page.svx", {
         eager: true,
@@ -41,10 +62,12 @@ export function getDocItems(): DocItem[] {
     for (const docItem in paths) {
         const file = paths[docItem];
         const url = pathToUrl(docItem);
+        const filePath = "." + docItem;
 
         if (file && typeof file === "object" && "metadata" in file && url) {
             const metadata = file.metadata as Omit<DocItem, "url">;
             const docItem = { ...metadata, url } satisfies DocItem;
+            docItem.path = filePath;
             if (docItem.folder) {
                 docItem.children = [];
             }
