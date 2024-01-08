@@ -4,7 +4,7 @@
 
 <div class="flex flex-row w-full">
     <Sidebar></Sidebar>
-    <article class="prose text-ctp-text prose-zinc prose-invert m-10 w-full">
+    <article class="prose text-ctp-text prose-zinc prose-invert m-10">
         <slot />
     </article>
 </div>
