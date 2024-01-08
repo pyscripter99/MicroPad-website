@@ -9,3 +9,20 @@ This is the installation page
 ```sh
 $ go install example.com
 ```
+
+Let's Write some go code!
+
+```go
+// Declare our imports
+import "fmt"
+
+// Main function; the entry to our program
+func main() {
+    // Print Hello, World!
+    fmt.Println("Hello, World!")
+}
+```
+
+```go
+// this is a reallllllly long comment, let's see how my styles handle it! Anyway bye now...
+```
