@@ -5,6 +5,7 @@
     import "../app.css";
     import "@unocss/reset/tailwind.css";
     import "virtual:uno.css";
+    import Navbar from "$lib/components/Navbar.svelte";
 
     function addCopyButtons() {
         for (const node of document.querySelectorAll("pre > code")) {
@@ -22,4 +23,5 @@
     afterNavigate(addCopyButtons);
 </script>
 
+<Navbar />
 <slot />
