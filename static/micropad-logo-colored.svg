@@ -166,7 +166,18 @@
        hide_knots="false" /></defs><g
      inkscape:label="Logo"
      inkscape:groupmode="layer"
-     id="logo"><g
+     id="logo"><style
+   id="style1">
+     #logo {
+      color: #40a02b;
+     }
+
+     @media (prefers-color-scheme: dark) {
+      #logo {
+      color: #a6e3a1;
+     }
+     }
+     </style> <g
    id="rocket"
    transform="matrix(1.3406649,0.18666738,-0.18666738,1.3406649,-16.776089,-45.640165)"
    inkscape:label="Rocket"
