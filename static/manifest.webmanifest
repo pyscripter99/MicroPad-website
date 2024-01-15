@@ -29,7 +29,7 @@
     "theme_color": "#A6E3A1",
     "description": "Simple, hackable text editor written in Go",
     "id": "/",
-    "start_page": "/",
+    "start_url": "/",
     "display": "standalone",
     "scope": "/"
 }
