@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import UnoCSS from "unocss/vite";
 import extractorSvelte from "@unocss/extractor-svelte";
 import { svelteSVG } from "rollup-plugin-svelte-svg";
+import { SvelteKitPWA } from "@vite-pwa/sveltekit";
 
 export default defineConfig({
     plugins: [
@@ -26,5 +27,6 @@ export default defineConfig({
             },
         }),
         sveltekit(),
+        SvelteKitPWA(),
     ],
 });
