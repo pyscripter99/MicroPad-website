@@ -25,7 +25,5 @@ export default defineConfig({
                 ],
             },
         }),
-        sveltekit(),
-        SvelteKitPWA(),
     ],
 });
