@@ -14,6 +14,12 @@
             "purpose": "maskable"
         },
         {
+            "src": "/micropad-logo-solid-monochrome.svg",
+            "type": "image/svg+xml",
+            "sizes": "16x16 32x32",
+            "purpose": "monochrome"
+        },
+        {
             "src": "/micropad-logo-colored.svg",
             "type": "image/svg+xml",
             "sizes": "128x128 180x180 512x512"
@@ -23,6 +29,12 @@
             "type": "image/png",
             "sizes": "128x128 180x180 512x512",
             "purpose": "maskable"
+        },
+        {
+            "src": "/micropad-logo-monochrome.svg",
+            "type": "image/svg+xml",
+            "sizes": "128x128 180x180 512x512",
+            "purpose": "monochrome"
         }
     ],
     "background_color": "#1E1E2E",
